@@ -1,0 +1,29 @@
+-functions.php pentru conectarea la baza de date si alte functii;
+-crearea tabelelor (users, autograf, requests) in MySql, creat indecsi, primary keys, foreign keys
+intre users si autograf, asigurat auto-increment pe id-uri, unicitate pe username;
+
+HOME PAGE(INDEX.PHP)
+-creare cont: 
+   1) restrictii pe campuri: nume formate doar din litere, formatul email-ului, username doar din litere si cifre, age din numere, 
+   parole identice cu lungime>=6, acceptarea conditiilor etc.
+   La incalcarea restrictiilor se va face refresh+ mesaje de avertizare in functie de problema.
+   2) submit- poza va fi salvata in PHP/user_img si linkul acesteia salvat apoi in baza de date impreuna cu celelalte informatii. 
+   Parola este salvata sub forma codata(hashing). Utilizatorul va fi redirectionat catre home pentru logare.
+-implementat login: 
+   1) in cazul in  care s-a gresit parola/username va fi semnalat cu un mesaj;
+   2) in caz de succes va fi redirectionat la profilul lui;
+   3) linkurile catre paginile specifice unui utilizator sunt inaccesibile pana la logarea acestuia; (bazarul este public);
+ 
+BAZAR PAGE
+-in bazar.php exista un template pentru afisarea tuturor autografelor din baza de date cu query-uri simple asupra bazei de date;
+In autografe vor aparea si informatii despre proprietarul autografului;
+-ordonarea acestora in functie de dorinta utilizatorului; se trimite prin metoda POST catre o functie order din functions.php;
+
+PROFILE PAGE 
+-descrierea profilului; query-uri direct din profile.php;
+-edit profile: poate edita fiecare camp in parte (update cu verificarea restrictiilor); 
+-add_new autograf: imaginile salvate in auto_img din PHP; acelasi sistem ca la creare cont; restrictii pe value si artist name;
+-edit autograf: poate edita imaginea,descrierile si valoarea insa numele artistului si domeniul nu;
+-delete autograf: delete * from autograf where id_autograf=id_ul curent ^^; mesaj de confirmare;
+-disconnect: utilizatorul va fi deconectat (inchisa sesiunea curenta) si redirectionat catre home; +mesaj de confirmare;
+-delete account: delete * from users where id_user=id_ul curent :D +mesaj de confirmare; 

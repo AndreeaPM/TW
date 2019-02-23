@@ -1,0 +1,9 @@
+-search button-implementare (orice search va fi redirectionat catre bazar; tag-uri);
+-send-proposal:
+     3) Sent Requests: vom avea autograful dorit + cele propuse + informatiile proprietarului; 
+     Utilizatorul va putea sterge request-ul daca inca nu a fost acceptat;
+     Daca cererea i-a fost refuzata/acceptata aceasta va fi stearsa;
+     4) Received Requests: vom avea autograful dorit + cele propuse + informatiile proprietarului;
+     Utilizatorul poate accepta cererea, moment in care updatam baza de date (stergem cererea din tabel, schimbam id_user la autografe);
+     Cererea poate fi refuzata printr-un buton (stergem cererea din tabel);
+-Ranking(ca metoda de validare), report, paginare bazar;
